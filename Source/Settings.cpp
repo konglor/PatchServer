@@ -3,17 +3,23 @@
 
 C Str& Settings::getVal(C Str &k)
 {
-	Str* r = cfg.find(k);	if (r != null)		return *r;	return k;
+	Str* r = cfg.find(k);
+	if (r != null)
+		return *r;
+	return k;
 }
 
 void Settings::Load(TextData &data)
 {
 	Str key;
 	key = "Service";
-	if (TextNode *n = data.findNode("Service"))
-		(*cfg.get("Service")) = Str(n->asText());
+	if (TextNode *n = data.findNode(key))
+		(*cfg.get(key)) = Str(n->asText());
 
-	// Client Port
+	key = "Version";
+	if (TextNode *n = data.findNode(key))
+		(*cfg.get(key)) = Str(n->asText());
+
 }
 
 void Settings::Load(C Str &name)

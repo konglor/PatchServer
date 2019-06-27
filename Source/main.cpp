@@ -7,6 +7,7 @@
 #include "stdafx.h"
 #include "@@headers.h"
 #include "Settings.h"
+#include "PatchServer.h"
 
 void InitPre()
 {
@@ -30,6 +31,11 @@ bool Init()
 	Meshes.mode(CACHE_DUMMY_NULL);
 	PhysBodies.mode(CACHE_DUMMY_NULL);
 	ParticlesCache.mode(CACHE_DUMMY_NULL);
+
+	Int port = TextInt((CChar*)Settings::Instance().getVal("Port"));
+	if (!g_PatchServer.create(port))
+		Exit("Can't create Server TCP Socket");
+
 	return true;
 }
 
@@ -53,5 +59,7 @@ void Draw()
 	flt y = D.h(), h = ts.size.y;
 
 	D.text(ts, -D.w(), y, S + "Service: " + Settings::Instance().getVal("Service"));
+	y -= h;
+	D.text(ts, -D.w(), y, S + "Version: " + Settings::Instance().getVal("Version"));
 	y -= h;
 }

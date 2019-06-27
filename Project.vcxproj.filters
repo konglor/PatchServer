@@ -51,9 +51,15 @@
     <ClCompile Include="Source\Settings.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="Source\PatchServer.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Settings.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\PatchServer.h">
       <Filter>Source</Filter>
     </ClInclude>
   </ItemGroup>

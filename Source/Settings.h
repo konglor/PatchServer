@@ -1,3 +1,6 @@
+#ifndef __SETTINGS_H__
+#define __SETTINGS_H__
+
 #include "@@headers.h"
 
 // TODO: move this to seperate .h file (if Map<Str, Str> is to be used again)
@@ -29,3 +32,5 @@ private:
 
 	Map<Str, Str> cfg = Map<Str, Str>(Compare, Create);
 };
+
+#endif
