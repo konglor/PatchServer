@@ -1419,6 +1419,7 @@
     </ClCompile>
     <ClInclude Include="Source\PatchServer.h" />
     <ClInclude Include="Source\Settings.h" />
+    <ClInclude Include="Source\StrMap.h" />
     <ClInclude Include="stdafx.h" />
     <Media Include="C:\Esenthel/Bin/Universal\Engine.pak" />
     <Media Include="Project.pak" />

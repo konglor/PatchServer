@@ -62,5 +62,8 @@
     <ClInclude Include="Source\PatchServer.h">
       <Filter>Source</Filter>
     </ClInclude>
+    <ClInclude Include="Source\StrMap.h">
+      <Filter>Source</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

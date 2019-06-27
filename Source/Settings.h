@@ -2,10 +2,7 @@
 #define __SETTINGS_H__
 
 #include "@@headers.h"
-
-// TODO: move this to seperate .h file (if Map<Str, Str> is to be used again)
-static Int Compare(C Str &a, C Str &b) { return EE::CompareCS(a, b); }
-static Bool Create(Str &data, C Str &key, Ptr user) { return true; }
+#include "StrMap.h"
 
 /** 
  * Singleton for Settings
