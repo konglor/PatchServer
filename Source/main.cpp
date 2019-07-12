@@ -41,6 +41,7 @@ bool Init()
 
 bool Update()
 {
+	g_PatchServer.update();
 	Gui.update();
 	Time.wait(1);
 	return true;
@@ -48,6 +49,7 @@ bool Update()
 
 void Shut()
 {
+	g_PatchServer.del();
 }
 
 void Draw()
@@ -62,4 +64,9 @@ void Draw()
 	y -= h;
 	D.text(ts, -D.w(), y, S + "Version: " + Settings::Instance().getVal("Version"));
 	y -= h;
+	Int port = TextInt((CChar*)Settings::Instance().getVal("Port"));
+	D.text(ts, -D.w(), y, S + "Port: " + Settings::Instance().getVal("Port"));
+	y -= h;
+
+	Gui.draw();
 }
