@@ -8,6 +8,7 @@ x64/
 #
 *.exe
 *.dll
+log.txt
 
 # User-specific files
 *.suo
