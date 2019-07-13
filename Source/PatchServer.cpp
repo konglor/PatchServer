@@ -11,8 +11,7 @@ PatchServer::PatchServer() :
 void PatchServer::update()
 {
 	super::update();
-	REPA(clients)
-		getClient(i).connection.flush();
+	REPA(clients) getClient(i).connection.flush();
 }
 
 ::Client& PatchServer::getClient(Int i)
