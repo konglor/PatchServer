@@ -3,11 +3,17 @@
  * verifies that the client and server have the same version [done]
  * sends the GateServer IP and port to client so client may connect to the game
  * Security Checks: TCP Flood / SPOF (if this service goes down, no one will be able to log in)
+ *
+ * TODO: GateServer thread
+ * ICU lib
+ * 
  */
 #include "stdafx.h"
 #include "@@headers.h"
 #include "Settings.h"
 #include "PatchServer.h"
+
+Thread a;
 
 void InitPre()
 {

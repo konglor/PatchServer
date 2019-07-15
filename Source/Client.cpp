@@ -37,22 +37,7 @@ bool Client::update()
 	}
 	else // process commands
 	{
-		UInt cmd = connection.data.getUInt();
-		switch (cmd)
-		{
-			case CMD_CPS_VERSION:
-			{
-				UInt cVerion = connection.data.getUInt();
-				versionOk = connection.data.getUInt() ==
-					TextInt(Settings::Instance().getVal("Version"));
-
-				if (!versionOk)
-					return disconnect(); // TODO: need to update the client
-
-				// TODO: send client ip to gateserver for staging
-				// TODO: send gateserver ip to client for connection
-			}
-		}
+		process();
 	}
 	return true;
 }
@@ -62,4 +47,23 @@ bool Client::disconnect()
 	connection.flush();
 	connection.del();
 	return false;
+}
+
+void Client::process()
+{
+	UInt cmd = connection.data.getUInt();
+	switch (cmd)
+	{
+		case CMD_CPS_VERSION:
+		{
+			UInt cVerion = connection.data.getUInt();
+			versionOk = connection.data.getUInt() == TextInt(Settings::Instance().getVal("Version"));
+
+			if (!versionOk)
+				disconnect(); // TODO: need to update the client
+
+			// TODO: send client ip to gateserver for staging
+			// TODO: send gateserver ip to client for connection
+		} break;
+	}
 }

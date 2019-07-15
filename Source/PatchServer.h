@@ -10,9 +10,6 @@ private:
 	// ConnectionServer.clients : Map<SockAddr, Client>
 	::Client& getClient(Int i);
 
-	void ClientConnect(::Client &client);
-	void ClientDisconnect(::Client &client);
-
 public:
 	PatchServer();
 	void update();

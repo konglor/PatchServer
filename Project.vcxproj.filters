@@ -57,6 +57,12 @@
     <ClCompile Include="Source\Settings.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="Source\App.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\GateServer.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Client.h">
@@ -72,6 +78,12 @@
       <Filter>Source</Filter>
     </ClInclude>
     <ClInclude Include="Source\StrMap.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\App.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GateServer.h">
       <Filter>Source</Filter>
     </ClInclude>
   </ItemGroup>

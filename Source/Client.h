@@ -13,6 +13,8 @@ private:
 	virtual bool update();
 	bool disconnect();
 
+	void process();
+
 public:
 	Client();
 	~Client();
