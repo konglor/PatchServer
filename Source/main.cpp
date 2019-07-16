@@ -11,9 +11,7 @@
 #include "stdafx.h"
 #include "@@headers.h"
 #include "Settings.h"
-#include "PatchServer.h"
-
-Thread a;
+#include "App.h"
 
 void InitPre()
 {
@@ -38,16 +36,13 @@ bool Init()
 	PhysBodies.mode(CACHE_DUMMY_NULL);
 	ParticlesCache.mode(CACHE_DUMMY_NULL);
 
-	Int port = TextInt((CChar*)Settings::Instance().getVal("Port"));
-	if (!g_PatchServer.create(port))
-		Exit("Can't create Server TCP Socket");
+	g_PatchApp.init();
 
 	return true;
 }
 
 bool Update()
 {
-	g_PatchServer.update();
 	Gui.update();
 	Time.wait(1);
 	return true;
@@ -55,7 +50,7 @@ bool Update()
 
 void Shut()
 {
-	g_PatchServer.del();
+	g_PatchApp.shut();
 }
 
 void Draw()

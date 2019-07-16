@@ -7,15 +7,20 @@
 class PatchApp
 {
 private:
-	PatchServer* p_PatchServer;
-	GateServer* p_GateServer;
+	PatchServer* m_pPatchServer;
+	GateServer* m_pGateServer;
 
-	Thread t_PatchServer;
-	Thread t_GateServer;
+	Thread* m_tPatchThread;
+	Thread* m_tGateThread;
 
+public:
 	PatchApp();
+	~PatchApp();
+
+	void init();
+	void shut();
 };
 
-extern PatchApp App;
+extern PatchApp g_PatchApp;
 
 #endif
