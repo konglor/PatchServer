@@ -36,6 +36,11 @@ bool Init()
 	PhysBodies.mode(CACHE_DUMMY_NULL);
 	ParticlesCache.mode(CACHE_DUMMY_NULL);
 
+#ifdef _WIN32
+	LogConsole(); // quick debugging on windows
+#endif
+
+	// sets up thread for client <-> patchserver
 	g_PatchApp.init();
 
 	return true;

@@ -1390,6 +1390,7 @@
   <ItemGroup>
     <ClCompile Include="Source\App.cpp" />
     <ClCompile Include="Source\Client.cpp" />
+    <ClCompile Include="Source\ClientOp.cpp" />
     <ClCompile Include="Source\GateServer.cpp" />
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\PatchServer.cpp" />

@@ -2,6 +2,7 @@
 #include "Client.h"
 #include "NetCommand.h"
 #include "Settings.h"
+#include "@@headers.h"
 
 Client::Client() :
 	versionOk(false)
@@ -58,17 +59,7 @@ void Client::process()
 		{
 			UInt cVersion = connection.data.getUInt();
 			versionOk = cVersion == TextUInt(Settings::Instance().getVal("Version"));
-
-			if (!versionOk)
-			{
-				disconnect(); // TODO: need to update the client
-			}
-			else
-			{
-			}
-
-			// TODO: send client ip to gateserver for staging
-			// TODO: send gateserver ip to client for connection
+			cmd_SendVersionResult();
 		} break;
 	}
 }

@@ -63,6 +63,9 @@
     <ClCompile Include="Source\GateServer.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="Source\ClientOp.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Client.h">

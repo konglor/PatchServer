@@ -24,6 +24,14 @@ void Settings::Load(TextData &data)
 	if (TextNode *n = data.findNode(key))
 		(*cfg.get(key)) = Str(n->asText());
 
+	key = "LoginIP";
+	if (TextNode *n = data.findNode(key))
+		(*cfg.get(key)) = Str(n->asText());
+
+	key = "LoginPort";
+	if (TextNode *n = data.findNode(key))
+		(*cfg.get(key)) = Str(n->asText());
+
 }
 
 void Settings::Load(C Str &name)
