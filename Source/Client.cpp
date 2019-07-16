@@ -56,11 +56,16 @@ void Client::process()
 	{
 		case CMD_CPS_VERSION:
 		{
-			UInt cVerion = connection.data.getUInt();
-			versionOk = connection.data.getUInt() == TextInt(Settings::Instance().getVal("Version"));
+			UInt cVersion = connection.data.getUInt();
+			versionOk = cVersion == TextUInt(Settings::Instance().getVal("Version"));
 
 			if (!versionOk)
+			{
 				disconnect(); // TODO: need to update the client
+			}
+			else
+			{
+			}
 
 			// TODO: send client ip to gateserver for staging
 			// TODO: send gateserver ip to client for connection
